@@ -6,3 +6,4 @@ langgraph
 langchain
 typing
 typing_extensions
+gunicorn
