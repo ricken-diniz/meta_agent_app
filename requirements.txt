@@ -1,0 +1,8 @@
+flask
+langchain_openai
+langchain_chroma
+langchain_core
+langgraph
+langchain
+typing
+typing_extensions
