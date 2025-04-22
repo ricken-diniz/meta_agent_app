@@ -1,15 +1,15 @@
 # from langchain_ollama import OllamaEmbeddings, OllamaLLM;
 from langchain_openai import ChatOpenAI
-from database import VectorDataBase
-from tools_executor import BasicToolNode
-from typing import Annotated, Union
-from typing_extensions import TypedDict  
 from langchain_core.agents import AgentAction, AgentFinish
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage,BaseMessage
 from langgraph.graph import StateGraph, END
 from langgraph.prebuilt import tools_condition, create_react_agent
 from langchain.tools import tool
 from langgraph.graph.message import add_messages
+from database import VectorDataBase
+from tools_executor import BasicToolNode
+from typing import Annotated, Union
+from typing_extensions import TypedDict  
 
 import os
 from dotenv import load_dotenv
@@ -34,7 +34,7 @@ llm = ChatOpenAI(model='gpt-4o-mini', openai_api_key=api_key)
     
 
 @tool
-def salva_informacao(informacao: str) -> str:
+def salva_informacao(informacao: int) -> str:
     """
     Salva a informação no banco de dados vetorial.
     """
@@ -86,7 +86,7 @@ try:
 except Exception:
     # This requires some extra dependencies and is optional
     print(Exception)
-    print('Exception')
+    # print('Exception')
     pass
 
 
